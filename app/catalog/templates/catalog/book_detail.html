@@ -1,0 +1,23 @@
+{% extends 'catalog/base.html' %}
+
+{% block title %}Книга {{ book.title }}{% endblock %}
+
+{% block content %}
+<h1>Книга {{ book.title }}</h1>
+
+<p>Автор: {{ book.author }}</p>
+<p>Опис: {{ book.summary }}</p>
+<p>ISBN: {{ book.isbn }}</p>
+<p>Жанр: {{ book.genre.all|join:", " }}</p>
+
+
+<h3>Копії</h3>
+<ul>
+{% for instance in book.bookinstance_set.all %}
+<li>{{ instance.id }} ({{ instance.get_status_display }})</li>
+{% empty %}
+<li>Екземпляри книги відсутні :(</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

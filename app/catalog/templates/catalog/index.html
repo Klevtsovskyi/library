@@ -2,4 +2,11 @@
 
 {% block content %}
 <h1>Ласкаво просимо до Бібліотеки!</h1>
+<h3>Бібліотека містить</h3>
+<ul>
+  <li>Книги: {{ book_num }}</li>
+  <li>Автори: {{ author_num }}</li>
+  <li>Екземпляри книг: {{ bookinstance_num }}</li>
+  <li>Доступні книги: {{ bookinstance_available_num }}</li>
+</ul>
 {% endblock %}

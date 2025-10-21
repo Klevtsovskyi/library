@@ -24,5 +24,9 @@ class BookListView(ListView):
 class BookDetailView(DetailView):
     model = Book
 
+class AuthorListView(ListView):
+    model = Author
+
+
 
 

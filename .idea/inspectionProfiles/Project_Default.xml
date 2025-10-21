@@ -1,0 +1,28 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="t1_1_quadratic_equation" />
+          <option value="t2_turtle.t01_02.main.triangle" />
+          <option value="t2_turtle.t01_02.main.*" />
+          <option value="t3_inheritance.t03_01_equation.QuadraticEquation.*" />
+          <option value="T25_Network.A25_03.presentation.Presentation.rfile" />
+          <option value="T25_Network.A25_03.presentation.Presentation.wfile" />
+          <option value="socketserver.BaseServer.client" />
+          <option value="T25_Network.A25_03.protocol.Presentation.rfile" />
+          <option value="T25_Network.A25_03.protocol.Presentation.wfile" />
+          <option value="T25_Network.A25_03.protocol.BaseProtocol.rfile" />
+          <option value="T25_Network.A25_03.protocol.BaseProtocol.wfile" />
+          <option value="T25_Network.A25_03.protocol.BaseDateExchangeProtocol.rfile" />
+          <option value="T25_Network.A25_03.protocol.BaseDateExchangeProtocol.wfile" />
+          <option value="T25_Network.A25_03.protocol.BaseDataExchangeProtocol.rfile" />
+          <option value="T25_Network.A25_03.protocol.BaseDataExchangeProtocol.wfile" />
+          <option value="T25_Network.A25_03.A25_03_protocol.BaseDataExchangeProtocol.rfile" />
+          <option value="T25_Network.A25_03.A25_03_protocol.BaseDataExchangeProtocol.wfile" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

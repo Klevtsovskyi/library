@@ -45,4 +45,4 @@ class BookInstance(models.Model):
     book = models.ForeignKey(Book, on_delete=models.RESTRICT)
 
     def __str__(self):
-        return self.book.title + ' ' + self.id
+        return self.book.title + ' ' + str(self.id)

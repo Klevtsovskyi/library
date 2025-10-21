@@ -7,7 +7,7 @@
 
 <ul>
 {% for author in author_list %}
-<li>{{ author }}</li>
+<li><a href="{% url 'author_detail' author.id %}">{{ author }}</a></li>
 {% empty %}
 <li>Автори відсутні :(</li>
 {% endfor %}

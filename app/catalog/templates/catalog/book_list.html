@@ -7,7 +7,10 @@
 
 <ul>
 {% for book in book_list %}
-<li><a href="{% url 'book_detail' book.id %}">{{ book.title }}</a> ({{ book.author }})</li>
+<li>
+  <a href="{% url 'book_detail' book.id %}">{{ book.title }}</a>
+  (<a href="{% url 'author_detail' book.author.id %}">{{ book.author }}</a>)
+</li>
 {% empty %}
 <li>Книги відсутні :(</li>
 {% endfor %}

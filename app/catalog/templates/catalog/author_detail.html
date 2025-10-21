@@ -1,0 +1,18 @@
+{% extends 'catalog/base.html' %}
+
+{% block title %}{{ author }}{% endblock %}
+
+{% block content %}
+<h1>{{ author }}</h1>
+<p>{{ author.date_of_birth|date:"d.m.Y" }} - {% if author.date_of_death %} {{ author.date_of_death|date:"d.m.Y" }} {% endif %}</p>
+
+<h3>Книги</h3>
+<ul>
+{% for book in author.book_set.all %}
+<li><a href="{% url 'book_detail' book.id %}">{{ book.title }}</a> ({{ book.isbn }})</li>
+{% empty %}
+<li>Книги автора відсутні :(</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

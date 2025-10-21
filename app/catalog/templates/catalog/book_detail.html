@@ -5,7 +5,7 @@
 {% block content %}
 <h1>Книга {{ book.title }}</h1>
 
-<p>Автор: {{ book.author }}</p>
+<p>Автор: <a href="{% url 'author_detail' book.author.id %}">{{ book.author }}</a></p>
 <p>Опис: {{ book.summary }}</p>
 <p>ISBN: {{ book.isbn }}</p>
 <p>Жанр: {{ book.genre.all|join:", " }}</p>

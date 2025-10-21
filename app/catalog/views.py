@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic import ListView
 
 from .models import Book, Author, BookInstance
 
@@ -15,4 +16,8 @@ def index(request):
         'bookinstance_available_num': bookinstance_available_num,
     }
     return render(request, 'catalog/index.html', context)
+
+
+class BookListView(ListView):
+    model = Book
 

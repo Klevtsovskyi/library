@@ -1,0 +1,20 @@
+<h5>Меню</h5>
+<ul>
+  <li><a href="{% url 'index' %}">Головна</a></li>
+  <li><a href="{% url 'book_list' %}">Книги</a></li>
+  <li><a href="{% url 'author_list' %}">Автори</a></li>
+</ul>
+
+<ul>
+  {% if not user.is_authenticated %}
+  <li><a href="{% url 'login' %}">Вхід</a></li>
+  <li><a href="{% url 'registration' %}">Реєстрація</a></li>
+  {% else %}
+  <li>
+    <form method="POST" action="{% url 'logout' %}">
+      {% csrf_token %}
+      <button type="submit">Вихід</button>
+    </form>
+  </li>
+  {% endif %}
+</ul>

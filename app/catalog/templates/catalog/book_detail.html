@@ -14,10 +14,20 @@
 <h3>Копії</h3>
 <ul>
 {% for instance in book.bookinstance_set.all %}
-<li>{{ instance.id }} ({{ instance.get_status_display }})</li>
+  <li>
+  {% if perms.catalog.add_bookinstance %}
+    <a href="{% url 'book_instance' book.id %}?uid={{ instance.id }}">{{ instance.id }}</a>
+  {% else %}
+    {{ instance.id }}
+  {% endif %}
+ ({{ instance.get_status_display }})
+  </li>
 {% empty %}
 <li>Екземпляри книги відсутні :(</li>
 {% endfor %}
 </ul>
+{% if perms.catalog.add_bookinstance %}
+<div><a href="{% url 'book_instance' book.id %}">Додати новий екземпляр книги</a></div>
+{% endif %}
 
 {% endblock %}

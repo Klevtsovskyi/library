@@ -1,4 +1,5 @@
 from django.contrib.auth.decorators import permission_required
+from django.core.exceptions import PermissionDenied
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView, DetailView
 
@@ -53,3 +54,15 @@ def book_instance(request, pk):
         form = BookInstanceForm(instance=obj)
 
     return render(request, 'catalog/book_instance.html', {"form": form, "book": book})
+
+
+@permission_required("delete_bookinstance")
+def book_instance_delete(request, pk):
+    book = get_object_or_404(Book, id=pk)
+    uid = request.GET.get("uid", None)
+    instance = get_object_or_404(BookInstance, id=uid)
+    if request.method == "POST":
+        instance.delete()
+        return redirect("book_detail", pk=pk)
+    else:
+        raise PermissionDenied

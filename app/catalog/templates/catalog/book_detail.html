@@ -17,6 +17,10 @@
   <li>
   {% if perms.catalog.add_bookinstance %}
     <a href="{% url 'book_instance' book.id %}?uid={{ instance.id }}">{{ instance.id }}</a>
+    <form method="POST" action="{% url 'book_instance_delete' book.id %}?uid={{ instance.id }}">
+      {% csrf_token %}
+      <button type="submit">❌</button>
+    </form>
   {% else %}
     {{ instance.id }}
   {% endif %}

@@ -2,6 +2,9 @@ import uuid
 
 from django.db import models
 
+from library import settings
+
+
 class Book(models.Model):
     title = models.CharField(max_length=200)
     author = models.ForeignKey('Author', on_delete=models.RESTRICT)
@@ -43,6 +46,8 @@ class BookInstance(models.Model):
 
     status = models.CharField(max_length=1, choices=LOAN_STATUS, default="a")
     book = models.ForeignKey(Book, on_delete=models.RESTRICT)
+    imprint = models.CharField(max_length=50, blank=True, null=True)
+    borrower = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.RESTRICT, blank=True, null=True)
 
     def __str__(self):
         return self.book.title + ' ' + str(self.id)

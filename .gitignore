@@ -210,3 +210,9 @@ __marimo__/
 .idea
 .DS_Store
 staticfiles
+
+node_modules
+dist
+dist-ssr
+coverage
+*.local

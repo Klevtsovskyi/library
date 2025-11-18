@@ -28,7 +28,7 @@ services:
       - ./pgadmin/servers.json:/pgadmin4/servers.json
 
   web:
-    build: .
+    build: ./app
     volumes:
       - ./app:/app
       - static_volume:/app/staticfiles

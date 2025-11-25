@@ -1,11 +1,18 @@
-<script setup></script>
+<script setup>
+import Menu from "@/views/Menu.vue";
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2">
+        <Menu/>
+      </div>
+      <div class="col-md-10">
+        <router-view></router-view>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style scoped></style>

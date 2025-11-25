@@ -43,6 +43,8 @@ services:
       - postgres
     expose:
       - "8000"
+    ports:
+      - "8000:8000"
     environment:
       DB_HOST: postgres
       DB_NAME: ${POSTGRES_DB}

@@ -8,13 +8,13 @@ export const useBookStore = defineStore("books", () => {
     const books = ref([]);
 
     async function loadBooks() {
-        const res = await apiPublic().get("/books");
+        const res = await apiPublic.get("/books");
         books.value = res.data;
     }
 
     async function loadBook() {
         const route = useRoute();
-        const res = await apiPublic().get(`/book/${route.params.id}`);
+        const res = await apiPublic.get(`/books/${route.params.id}`);
         book.value = res.data;
     }
 

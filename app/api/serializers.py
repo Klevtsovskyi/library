@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from catalog.models import Book, Author
+from catalog.models import Book, Author, BookInstance
 
 
 class AuthorSerializer(serializers.ModelSerializer):
@@ -17,3 +17,8 @@ class BookSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class BookInstanceSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = BookInstance
+        fields = '__all__'

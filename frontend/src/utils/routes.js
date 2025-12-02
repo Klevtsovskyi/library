@@ -17,7 +17,13 @@ const router = createRouter({
                 path: "/book/:id",
                 name: "BookDetail",
                 component: () => import("@/views/BookDetail.vue")
-            }
+            },
+            {
+                path: "/book/:id/instance/add",
+                name: "BookInstanceCreate",
+                component: () => import("@/views/BookInstanceCreate.vue")
+            },
+
         ]
     }
 );
